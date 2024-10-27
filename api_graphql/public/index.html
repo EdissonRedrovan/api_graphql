@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Product App</title>
+        <script type="text/javascript" src="script.js"></script>
+        <style>
+            .hidden {
+                display: none;
+            }
+            .product-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin: 5px 0;
+            }
+            .edit-form {
+                margin: 10px 0;
+                padding: 10px;
+                background-color: #f0f0f0;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body onload="fetchProducts()">
+        <h1>Productos</h1>
+        <ul id="product-list"></ul>
+
+        <div id="edit-form" class="edit-form hidden">
+            <h3>Editar Producto</h3>
+            <input type="hidden" id="editProductId">
+            <input type="text" id="editProductName" placeholder="Nombre del producto">
+            <input type="number" id="editProductValue" placeholder="Valor del producto">
+            <button onclick="updateProduct()">Guardar Cambios</button>
+            <button onclick="cancelEdit()">Cancelar</button>
+        </div>
+
+        <h2>Agregar Producto</h2>
+        <input type="text" id="productName" placeholder="Nombre del producto">
+        <input type="number" id="productValue" placeholder="Valor del producto">
+        <button onclick="addProduct()">Agregar Producto</button>
+    </body>
+</html>
